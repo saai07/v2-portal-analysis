@@ -147,8 +147,8 @@ def compute_credit_scores(input_file, output_json, output_csv):
 
 if __name__ == "__main__":
     compute_credit_scores(
-        input_file='input_transactions.json',
-        output_json='output_scores.json',
-        output_csv='wallet_features_scores.csv'
+        input_file='Data/input_transactions.json',
+        output_json='output/output_scores.json',
+        output_csv='output/wallet_features_scores.csv'
     )
     print("Done")

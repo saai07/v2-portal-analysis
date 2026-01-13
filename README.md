@@ -40,7 +40,7 @@ A machine learning-based credit scoring system for cryptocurrency wallets that a
    - scikit-learn
 
 3. **Prepare input data**
-   - Place your `input_transactions.json` file in the root directory
+   - Place your `input_transactions.json` file in the `Data/` directory (create if not exists)
    - The file should contain transaction data from Aave V2 protocol
 
 ## 📖 Usage
@@ -53,9 +53,9 @@ Run the main scoring script to process transaction data and generate credit scor
 python zeru.py
 ```
 
-**Outputs:**
-- `output_scores.json` - Wallet addresses with their credit scores
-- `wallet_features_scores.csv` - Detailed features and scores for each wallet
+**Outputs (in `output/` directory):**
+- `output/output_scores.json` - Wallet addresses with their credit scores
+- `output/wallet_features_scores.csv` - Detailed features and scores for each wallet
 
 ### Step 2: Generate Visualizations
 
@@ -65,7 +65,7 @@ Create analytical plots and charts:
 python plot.py
 ```
 
-**Outputs:**
+**Outputs (in root directory):**
 - `score_distribution.png` - Distribution of credit scores across all wallets
 - `risk_comparison.png` - Behavioral comparison between low and high-risk wallets
 
@@ -166,8 +166,10 @@ Key behavioral differences identified:
 |--------|---------------------|-------------------|
 | Repayment Ratio | 96% | 87% |
 | Liquidation Ratio | 5% | 0% |
-| Utilization | 88% | 276323362569% |
+| Utilization | 88% | 276323362569%* |
 | TX Frequency | 5.1/day | 566.6/day |
+
+*\*Extreme utilization values indicate anomalous behavior patterns (e.g., excessive borrowing without sufficient collateral)*
 
 *See [analysis.md](analysis.md) for detailed findings and visualizations.*
 
