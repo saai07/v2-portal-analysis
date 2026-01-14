@@ -5,7 +5,7 @@ import numpy as np
 
 def main():
     # Load features
-    df = pd.read_csv('wallet_features_scores.csv')
+    df = pd.read_csv('output/wallet_features_scores.csv')
     
     # Filter wallets
     low_risk = df[df['credit_score'] >= 700]
